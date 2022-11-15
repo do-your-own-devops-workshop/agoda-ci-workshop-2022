@@ -1,43 +1,46 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { SearchApi } from './api/search';
+
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 import globalStyles from '@/pages/index.style';
 
 import { useState } from 'react';
 
-export default function Home() {
+export const getServerSideProps: GetServerSideProps = async ({ res, query }) => {
 
-  const [location, setLocation] = useState('The Office at Central World');
-  const [results, setResults] = useState<PropertySearchResult[]>([
-    {
-      name: 'Test Apartment',
-      image: '/trump.jpg',
-      score: 1000,
-      price: 9999,
-      discount: 50,
-      nbr_of_reviews: 20,
-      additional_label: 'ONLY 2 LEFT',
-      free_cancellation: true,
+  const data = await SearchApi(query['q']);
+
+  return {
+    props: {
+      query: data.query,
+      results: data.results,
     },
-    {
-      name: 'Test Apartment',
-      image: '/trump.jpg',
-      score: 8.9,
-      price: 20,
-      discount: 0,
-      nbr_of_reviews: 20,
-      additional_label: 'ONLY 2 LEFT',
-      free_cancellation: true,
-    },
-  ]);
+  }
+}
+
+export default function Home(props: InferGetServerSidePropsType<typeof getServerSideProps>) {
+
+  const [query, setQuery] = useState(props.query ?? '');
+  const [results, setResults] = useState<PropertySearchResult[]>(props.results ?? []);
+
+  const doSearch = async function() {
+    const res = await fetch(`/api/search?q=${query}`);
+    setResults(await res.json());
+
+    if (window.history.pushState) {
+      var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?q=${query}`;
+      window.history.pushState({ path: newurl }, '', newurl);
+    }
+  };
 
   return (
     <div className='container'>
       <Head>
-        <title>{`Agoda | Hotels in ${location} | Best Price Guarantee!`}</title>
+        <title>{'Agoda | Hotels in The Office at Central World | Best Price Guarantee!'}</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
@@ -114,15 +117,20 @@ export default function Home() {
                   type='text'
                   className=''
                   placeholder='Enter a destination or property'
-                  value={location}
-                  onChange={(event) => {
-                    setLocation(event.target.value);
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  onKeyUp={(event) => {
+                    if (event.key !== 'Enter') return;
+                    doSearch();
                   }}
                 />
               </div>
             </div>
           </div>
-          <button className='search-btn'>Search</button>
+          <button
+            className='search-btn'
+            onClick={() => doSearch()}
+          >Search</button>
         </div>
       </div>
 
