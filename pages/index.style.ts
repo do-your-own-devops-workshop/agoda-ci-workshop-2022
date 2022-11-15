@@ -20,7 +20,6 @@ export default css.global`
   background-color: rgb(255, 255, 255);
   color: rgb(42, 42, 46);
   min-height: 60px;
-  -moz-box-align: center;
   align-items: center;
 }
 
@@ -44,13 +43,12 @@ export default css.global`
 }
 
 .page-header-navbtn {
-  padding-left: 28px;
+  padding-left: 24px;
   padding-right: 0px;
   margin-left: 8px;
   margin-right: 4px;
   display: inline-block;
   position: relative;
-  margin: 0px !important;
 }
 
 .page-header-navbtn-text {
@@ -126,6 +124,7 @@ export default css.global`
   cursor: pointer;
   font-size: 16px;
   text-overflow: ellipsis;
+  outline: none;
 }
 
 .search-btn {
