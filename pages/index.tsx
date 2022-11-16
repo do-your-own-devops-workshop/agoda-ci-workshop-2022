@@ -6,7 +6,7 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import { SearchApi } from './api/search';
 
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
-import globalStyles from '@/pages/index.style';
+import styles from '@/styles/index.style';
 
 import { useState } from 'react';
 
@@ -238,7 +238,7 @@ export default function Home(props: InferGetServerSidePropsType<typeof getServer
       </footer> */}
 
       <style jsx global>
-        {globalStyles}
+        {styles}
       </style>
     </div>
   )
