@@ -1,0 +1,41 @@
+name: pull request
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: |
+            ghcr.io/user/website:1.0.${{ github.run_id }}-alpha
+
+  test:
+    runs-on: ubuntu-latest
+    services:
+      our_website:
+        image: ghcr.io/user/website:1.0.${{ github.run_id }}-alpha
+        ports:
+           - 3000:3000
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - run: yarn
+      - run: yarn test:e2e
