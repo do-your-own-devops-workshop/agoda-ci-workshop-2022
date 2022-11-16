@@ -9,12 +9,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - 
+        name: set lower case owner name
+        run: |
+          echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+        env:
+          OWNER: '${{ github.repository_owner }}'
       -
         name: Login to GitHub Container Registry
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{ env.OWNER_LC }}
           password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Build and push
@@ -22,14 +28,14 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/website:1.0.${{ github.run_id }}-alpha
+            ghcr.io/${{ env.OWNER_LC }}/website:1.0.${{ github.run_id }}-alpha
 
   test:
     runs-on: ubuntu-latest
     needs: build
     services:
       our_website:
-        image: ghcr.io/${{ github.repository_owner }}/website:1.0.${{ github.run_id }}-alpha
+        image: ghcr.io/${{ env.OWNER_LC }}/website:1.0.${{ github.run_id }}-alpha
         ports:
            - 3000:3000
     steps:
