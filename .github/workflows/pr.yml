@@ -14,7 +14,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Build and push
@@ -22,14 +22,14 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/${{ github.actor }}/website:1.0.${{ github.run_id }}-alpha
+            ghcr.io/${{ github.repository_owner }}/website:1.0.${{ github.run_id }}-alpha
 
   test:
     runs-on: ubuntu-latest
     needs: build
     services:
       our_website:
-        image: ghcr.io/${{ github.actor }}/website:1.0.${{ github.run_id }}-alpha
+        image: ghcr.io/${{ github.repository_owner }}/website:1.0.${{ github.run_id }}-alpha
         ports:
            - 3000:3000
     steps:
