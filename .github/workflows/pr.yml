@@ -22,13 +22,13 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/user/website:1.0.${{ github.run_id }}-alpha
+            ghcr.io/${{ github.actor }}/website:1.0.${{ github.run_id }}-alpha
 
   test:
     runs-on: ubuntu-latest
     services:
       our_website:
-        image: ghcr.io/user/website:1.0.${{ github.run_id }}-alpha
+        image: ghcr.io/${{ github.actor }}/website:1.0.${{ github.run_id }}-alpha
         ports:
            - 3000:3000
     steps:
