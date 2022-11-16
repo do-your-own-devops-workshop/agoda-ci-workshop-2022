@@ -12,7 +12,7 @@ jobs:
       - 
         name: set lower case owner name
         run: |
-          echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+          export OWNER_LC=${OWNER,,}
         env:
           OWNER: '${{ github.repository_owner }}'
       -
