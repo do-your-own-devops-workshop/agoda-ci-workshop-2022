@@ -16,7 +16,7 @@ export const PropertyDb: PropertySearchResult[] = [
     price: 20,
     discount: 0,
     nbr_of_reviews: 20,
-    additional_label: 'ONLY 4 LEFT',
+    additional_label: 'WRITE ANYTHING HERE',
     free_cancellation: true,
   },
 ];
