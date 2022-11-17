@@ -11,7 +11,7 @@ export const PropertyDb: PropertySearchResult[] = [
   },
   {
     name: 'aaaaaaa',
-    image: '/trump.jpg',
+    image: '/biden.jpg',
     score: 8.9,
     price: 20,
     discount: 0,
