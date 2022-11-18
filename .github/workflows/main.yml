@@ -2,8 +2,7 @@ name: main
 
 on:
   push:
-    branches:
-      - 'main'
+    branches: [main]
 
 jobs:
 
@@ -21,5 +20,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: |
-            encx/agoda-ci-workshop-2022:latest,encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}
+          tags: 
+          - encx/agoda-ci-workshop-dryrun:latest
+          - encx/agoda-ci-workshop-dryrun:1.0.${{ github.run_id }}
