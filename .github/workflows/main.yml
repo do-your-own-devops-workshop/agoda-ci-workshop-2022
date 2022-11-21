@@ -1,0 +1,37 @@
+name: main
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: |
+            encx/agoda-ci-workshop-2022:latest
+            encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}
+
+  deploy-do:
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install doctl
+      uses: digitalocean/action-doctl@v2
+      with:
+        token: ${{ secrets.DO_TOKEN }}
+
+    - name: Trigger redeploy
+      run: doctl apps create-deployment --wait $DO_APPID
