@@ -34,4 +34,4 @@ jobs:
         token: ${{ secrets.DO_TOKEN }}
 
     - name: Trigger redeploy
-      run: doctl apps create-deployment --wait $DO_APPID
+      run: doctl apps create-deployment --wait ${{ secrets.DO_APPID }}
