@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'kite-mallory';
+  src: url('/fonts/mallory-light-webfont-v01.eot');
+  src: url('/fonts/mallory-light-webfont-v01.eot?#iefix') format('embedded-opentype'), url('/fonts/mallory-light-webfont-v01.woff2') format('woff2'), url('/fonts/mallory-light-webfont-v01.woff') format('woff'), url('/fonts/mallory-light-webfont-v01.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'kite-mallory';
+  src: url('/fonts/Mallory-Book.eot');
+  src: url('/fonts/Mallory-Book.eot?#iefix') format('embedded-opentype'), url('/fonts/Mallory-Book.woff2') format('woff2'), url('/fonts/Mallory-Book.woff') format('woff'), url('/fonts/Mallory-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'kite-mallory';
+  src: url('/fonts/mallory-medium.eot');
+  src: url('/fonts/mallory-medium.eot?#iefix') format('embedded-opentype'), url('/fonts/mallory-medium.woff2') format('woff2'), url('/fonts/mallory-medium.woff') format('woff'), url('/fonts/mallory-medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'kite-mallory', Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
