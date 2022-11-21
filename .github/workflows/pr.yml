@@ -38,5 +38,5 @@ jobs:
         with:
           node-version: 16.x
       - run: yarn
-      - run: npx playwright install
+      - run: npx playwright install chromium
       - run: yarn test:e2e
