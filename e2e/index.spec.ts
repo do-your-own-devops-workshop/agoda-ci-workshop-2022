@@ -21,3 +21,17 @@ test('should not have lower case in red badge', async ({ page }) => {
     await expect((/[a-z]/.test(await redbadge?.innerText() ?? ''))).toBeFalsy();
   }
 });
+
+test('should not have unsuccessful requests', async ({ page }) => {
+
+  page.on('requestfinished', async (request) => {
+
+    const response = await request.response();
+
+    if (response === null || response.status() < 200 || response.status() > 299) {
+      throw new Error(`The request to ${request.url()} failed: ${request.failure()?.errorText ?? response?.status()}`);
+    }
+  });
+
+  await page.goto('http://localhost:3000/');
+});
