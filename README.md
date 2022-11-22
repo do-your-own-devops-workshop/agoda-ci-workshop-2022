@@ -1,6 +1,8 @@
 # Agoda CI Workshop 2022
 
-This example is a part of "Do your own DevOps workshop" by Tech@agoda
+This example is a part of "Do your own DevOps workshop" by Tech@agoda.
+
+https://ag-ci-22.com
 
 ## How to contribute
 
