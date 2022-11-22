@@ -19,4 +19,14 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'WRITE ANYTHING HERE',
     free_cancellation: true,
   },
+  {
+    name: 'anya\'s secret base',
+    image: '/anya.gif',
+    score: 99.9,
+    price: 9999999,
+    discount: 99,
+    nbr_of_reviews: 20,
+    additional_label: 'โครงการคนละครึ่ง',
+    free_cancellation: true,
+  },
 ];
