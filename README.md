@@ -1,29 +1,21 @@
-# Next.js + Jest
+# Agoda CI Workshop 2022
 
-This example shows how to configure Jest to work with Next.js.
+This example is a part of "Do your own DevOps workshop" by Tech@agoda
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.
+## How to contribute
 
-## How to Use
+You can add your own hotels in the fake database located at `./db/fakedb.ts`
 
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
+## Running locally
 
-In your terminal, run the following command:
+Building
 
 ```bash
-npx create-next-app --example with-jest with-jest-app
+docker build -t our-website .
 ```
 
-```bash
-yarn create next-app --example with-jest with-jest-app
-```
+Running
 
 ```bash
-pnpm create next-app --example with-jest with-jest-app
-```
-
-## Run Jest Tests
-
-```bash
-npm test
+docker run -it --rm -p 3000:3000 our-website
 ```
