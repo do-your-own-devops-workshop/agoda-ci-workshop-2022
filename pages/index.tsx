@@ -146,6 +146,7 @@ export default function Home(props: InferGetServerSidePropsType<typeof getServer
                       alt={property.name}
                       fill={true}
                       sizes='100vw'
+                      priority
                     />
                   </div>
                   <div className='property-card-info'>
