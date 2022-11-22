@@ -1,13 +1,15 @@
 import { test, expect } from '@playwright/test'
 
-test('should not have more than 5 stars', async ({ page }) => {
+test('should not have more than 10 score', async ({ page }) => {
 
   await page.goto('http://localhost:3000/');
 
   const cards = await page.$$('.property-card');
   for (const card of cards) {
-    const stars = await card.$$('.property-card-info-subtitle-stars');
-    await expect(stars.length).toBeLessThanOrEqual(5);
+    const score = await card.$('.property-card-pricing-rating-right-score');
+    const scoreText = await score?.innerText() ?? '-1';
+    await expect(parseInt(scoreText)).toBeGreaterThanOrEqual(0);
+    await expect(parseInt(scoreText)).toBeLessThanOrEqual(10);
   }
 });
 
