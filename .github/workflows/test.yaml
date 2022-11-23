@@ -1,25 +1,31 @@
+name: pull request
+
 on:
   pull_request:
     branches: [main]
-    
+
 jobs:
-  build: 
-    runs-on: ubuntu-lastest
+
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Login to GitHub Container Registry
+      -
+        name: Login to GitHub Container Registry
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push
+      -
+        name: Build and push
         uses: docker/build-push-action@v3
         with:
           push: true
           tags: |
             encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}-alpha
+
   test:
+    runs-on: ubuntu-latest
     needs: build
-    runs-on: ubuntu-lastest
     services:
       our_website:
         image: encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}-alpha
