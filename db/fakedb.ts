@@ -27,6 +27,7 @@ export const PropertyDb: PropertySearchResult[] = [
     discount: 200,
     nbr_of_reviews: 20,
     additional_label: 'ONLY half room left',
+    free_cancellation: true,
   },
   {
     name: 'MUICT Resort',
@@ -38,6 +39,7 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'hello welcome, have escalator, have elevators',
     free_cancellation: false,
   },
+  {
     name: 'Banana Hotel',
     image: '/banana.jpg',
     score: 20,
