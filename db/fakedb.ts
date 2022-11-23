@@ -20,6 +20,16 @@ export const PropertyDb: PropertySearchResult[] = [
     free_cancellation: true,
   },
   {
+    name: 'lucky lucky 1',
+    image: '/biden.jpg',
+    score: 10,
+    price: 50,
+    discount: 0,
+    nbr_of_reviews: 20,
+    additional_label: 'BEST HOTEL EVER',
+    free_cancellation: true,
+  },
+  {
     name: 'Hotel California',
     image: '/hotel_california.jpg',
     score: 9,
