@@ -20,6 +20,16 @@ export const PropertyDb: PropertySearchResult[] = [
     free_cancellation: true,
   },
   {
+
+    name: 'Novotel Hotel',
+    image: '/novotel.jpeg',
+    score: 10,
+    price: 20000,
+    discount: 10,
+    nbr_of_reviews: 30,
+    additional_label: 'ONLY 10 LEFT',
+    free_cancellation: true,
+  },
     name: 'SafeForwork',
     image: '/redcat.jpg',
     score: 10,
@@ -199,4 +209,5 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'Freshman and Master 18+',
     free_cancellation: false,
   },
+
 ];
