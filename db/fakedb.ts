@@ -20,6 +20,16 @@ export const PropertyDb: PropertySearchResult[] = [
     free_cancellation: true,
   },
   {
+    name: 'Puthchy',
+    image: '/biden.jpg',
+    score: 10,
+    price: 5000,
+    discount: 50,
+    nbr_of_reviews: 10,
+    additional_label: 'LOVE PIZZA',
+    free_cancellation: true,
+  },
+  {
     name: 'Balloon Hotel',
     image: '/biden.jpg',
     score: 8.9,
