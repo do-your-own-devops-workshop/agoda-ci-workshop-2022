@@ -1,0 +1,52 @@
+name: Continuous Integration
+
+on:
+  # push:
+    # branches-ignore:
+    # - "main"
+    # - "dev"
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - "main"
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: |
+            encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}-alpha
+  
+  test:
+    name: Test
+    runs-on: ubuntu-22.04
+    needs: build
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - run: yarn
+      - run: npx playwright install chromium
+      - run: yarn test:e2e
+  
+    
