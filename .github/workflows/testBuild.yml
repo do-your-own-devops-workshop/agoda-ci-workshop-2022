@@ -19,9 +19,9 @@ jobs:
           tags: |
             encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}-alpha
 
-  testBuild:
-    needs: build
+  test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 16
