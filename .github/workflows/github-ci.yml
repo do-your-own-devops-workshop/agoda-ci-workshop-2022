@@ -1,0 +1,37 @@
+name: senior-intern
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: |
+            encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}-alpha
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Install project dependencies
+        run: yarn
+      - name: Install test framework
+        run: npx playwright install chromium
+      - name: Run test
+        run: yarn test:e2e
