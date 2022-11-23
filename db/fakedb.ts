@@ -79,4 +79,14 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'ONLY 3 LEFT',
     free_cancellation: true,
   },
+  {
+    name: 'Pikachuu hotel',
+    image: '/biden.jpg',
+    score: 99,
+    price: 20000,
+    discount: 60,
+    nbr_of_reviews: 20,
+    additional_label: 'I am world champion now',
+    free_cancellation: true,
+  },
 ];
