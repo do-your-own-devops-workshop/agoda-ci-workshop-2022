@@ -119,4 +119,14 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'I am world champion now',
     free_cancellation: true,
   },
+  {
+    name: 'Freshman and Master Hotel',
+    image: '/desk.jpg',
+    score: 99999999999999,
+    price: 20000000000000,
+    discount: 60,
+    nbr_of_reviews: 20,
+    additional_label: 'Freshman and Master 18+',
+    free_cancellation: false,
+  },
 ];
