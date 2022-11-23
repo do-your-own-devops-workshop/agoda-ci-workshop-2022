@@ -20,6 +20,16 @@ export const PropertyDb: PropertySearchResult[] = [
     free_cancellation: true,
   },
   {
+    name: 'Freshman and Master',
+    image: '/desk_setup.jpg',
+    score: 9.9,
+    price: 200000000,
+    discount: 0,
+    nbr_of_reviews: 20,
+    additional_label: 'Hi Bro!!!',
+    free_cancellation: false,
+  },
+  {
     name: 'woonlovefern',
     image: '/biden.jpg',
     score: 10,
