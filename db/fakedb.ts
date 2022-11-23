@@ -19,4 +19,14 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'WRITE ANYTHING HERE',
     free_cancellation: true,
   },
+  {
+    name: 'Slow boy hotel',
+    image: '/biden.jpg',
+    score: 7.9,
+    price: 20,
+    discount: 10,
+    nbr_of_reviews: 20,
+    additional_label: 'ONLY 3 LEFT',
+    free_cancellation: true,
+  },
 ];
