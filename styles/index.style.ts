@@ -71,7 +71,7 @@ export default css.global`
 
 .searchbox-container {
   margin: 0 auto;
-  width: 825px;
+  width: 80%;
   max-height: 70px;
   padding: 11px 0;
 }
@@ -405,4 +405,16 @@ main {
 .property-card .property-card-body > .property-card-pricing > .property-card-pricing-selectroom-btn > svg {
   fill: rgb(255, 255, 255);
 }
-`
+
+
+@media only screen and (min-width: 600px) {
+  .topbar {
+    width:
+  }
+}
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+}
