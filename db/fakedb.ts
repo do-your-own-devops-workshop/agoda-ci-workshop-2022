@@ -49,4 +49,14 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'Come here free wifi',
     free_cancellation: false,
   },
+  {
+    name: 'Tay Hotel',
+    image: '/biden.jpg',
+    score: 9.5,
+    price: 15,
+    discount: 15,
+    nbr_of_reviews: 20,
+    additional_label: 'Hotel for Soi Bad',
+    free_cancellation: true,
+  },
 ];
