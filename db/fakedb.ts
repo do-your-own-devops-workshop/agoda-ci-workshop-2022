@@ -19,4 +19,14 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'WRITE ANYTHING HERE',
     free_cancellation: true,
   },
+  {
+    name: 'Pom Kor Sue Shirt Kon La Tua Dai Prod Pls NA NA NA NA',
+    image: '/pls.jpg',
+    score: 10,
+    price: 1000000000,
+    discount: 0,
+    nbr_of_reviews: 20,
+    additional_label: 'L3 XL1 M1',
+    free_cancellation: true,
+  },
 ];
