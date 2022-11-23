@@ -1,9 +1,7 @@
-name: pull request
-
+name: workflow 
 on:
   pull_request:
-    branches: [main]
-
+    branches: [ main ]
 jobs:
 
   build:
