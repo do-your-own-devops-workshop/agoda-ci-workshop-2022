@@ -149,4 +149,14 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'I am world champion now',
     free_cancellation: true,
   },
+  {
+    name: 'Test Apartment',
+    image: '/trump.jpg',
+    score: 9,
+    price: 9999,
+    discount: 50,
+    nbr_of_reviews: 20,
+    additional_label: 'ONLY 2 LEFT',
+    free_cancellation: true,
+  },
 ];
