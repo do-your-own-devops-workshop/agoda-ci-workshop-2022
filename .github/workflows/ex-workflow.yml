@@ -1,6 +1,6 @@
 on:
-  push:
-    branch: [main]
+  pull_request:
+    branches: [main]
     
 jobs:
   build:
