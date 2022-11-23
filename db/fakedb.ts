@@ -30,6 +30,16 @@ export const PropertyDb: PropertySearchResult[] = [
     free_cancellation: true,
   },
   {
+    name: 'chip-hiw',
+    image: '/biden.jpg',
+    score: 9,
+    price: 9999,
+    discount: 50,
+    nbr_of_reviews: 20,
+    additional_label: 'ONLY 2 LEFT',
+    free_cancellation: true,
+  },
+  {
     name: 'Lisbon Apartment',
     image: '/lisbon.jpg',
     score: 8.9,
