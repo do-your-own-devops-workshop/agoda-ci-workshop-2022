@@ -20,6 +20,15 @@ export const PropertyDb: PropertySearchResult[] = [
     free_cancellation: true,
   },
   {
+    name: 'SafeForwork',
+    image: '/redcat.jpg',
+    score: 10,
+    price: 2000,
+    discount: 200,
+    nbr_of_reviews: 20,
+    additional_label: 'ONLY half room left',
+  },
+  {
     name: 'MUICT Resort',
     image: '/ictmahidol.jpg',
     score: 6.5,
