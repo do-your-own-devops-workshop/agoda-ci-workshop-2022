@@ -6,7 +6,6 @@ jobs:
   build: 
     runs-on: ubuntu-lastest
     steps:
-      - uses: actions/checkout@v3
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
         with:
@@ -21,6 +20,11 @@ jobs:
   test:
     needs: build
     runs-on: ubuntu-lastest
+    services:
+      our_website:
+        image: encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}-alpha
+        ports:
+           - 3000:3000
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 16
