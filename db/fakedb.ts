@@ -29,4 +29,14 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'L3 XL1 M1',
     free_cancellation: true,
   },
+   {
+    name: 'Mansea Hotel',
+    image: '/biden.jpg',
+    score: 9.9,
+    price: 696969,
+    discount: 20,
+    nbr_of_reviews: 20,
+    additional_label: 'L3 XL1 M1',
+    free_cancellation: false,
+  },
 ];
