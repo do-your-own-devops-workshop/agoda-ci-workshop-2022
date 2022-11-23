@@ -192,7 +192,7 @@ export const PropertyDb: PropertySearchResult[] = [
   {
     name: 'Freshman and Master Hotel',
     image: '/desk.jpg',
-    score: 99999999999999,
+    score: 999,
     price: 20000000000000,
     discount: 60,
     nbr_of_reviews: 20,
