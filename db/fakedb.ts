@@ -39,4 +39,14 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'hello, KMITL',
     free_cancellation: true,
   },
+    {
+    name: 'Mansea Gab ma leaw',
+    image: '/biden.jpg',
+    score: 9.9,
+    price: 696969,
+    discount: 0,
+    nbr_of_reviews: 20,
+    additional_label: 'Mansea kub :)',
+    free_cancellation: false,
+  },
 ];
