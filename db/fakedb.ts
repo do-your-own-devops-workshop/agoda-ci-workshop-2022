@@ -19,4 +19,14 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'WRITE ANYTHING HERE',
     free_cancellation: true,
   },
+  {
+    name: 'Novotel Hotel',
+    image: '/novotel.jpeg',
+    score: 10,
+    price: 20000,
+    discount: 10,
+    nbr_of_reviews: 30,
+    additional_label: 'ONLY 10 LEFT',
+    free_cancellation: true,
+  },
 ];
