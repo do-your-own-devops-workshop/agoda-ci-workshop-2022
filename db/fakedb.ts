@@ -29,4 +29,14 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'LOVE PIZZA',
     free_cancellation: true,
   },
+  {
+    name: 'Balloon Hotel',
+    image: '/biden.jpg',
+    score: 8.9,
+    price: 20,
+    discount: 0,
+    nbr_of_reviews: 20,
+    additional_label: 'WRITE ANYTHING HERE',
+    free_cancellation: true,
+  },
 ];
