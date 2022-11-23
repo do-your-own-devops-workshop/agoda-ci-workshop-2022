@@ -1,5 +1,5 @@
 on:
-  push:
+  pull_request:
     branches: [main]
 job:
   Build:
@@ -37,9 +37,3 @@ job:
           image: encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}-alpha
           ports:
             - 3000:3000
-      on:
-        pull_request:
-          branches: [main]
-      runs-on: ubuntu-latest
-
-
