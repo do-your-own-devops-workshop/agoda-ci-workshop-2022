@@ -72,16 +72,18 @@ export default css.global`
 .searchbox-container {
   margin: 0 auto;
   width: 80%;
-  max-height: 70px;
   padding: 11px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .input-with-icon {
-  margin-left: 0;
-  margin-right: 5px;
+  margin: 6px;
   height: 48px;
   padding: 0 5px;
-  width: calc(100% - 135px);
+  width: 88%;
   border-radius: 6px;
   background-color: #fff;
   box-shadow: 0 4px 10px 0 rgba(0,0,0,.07);
@@ -406,15 +408,14 @@ main {
   fill: rgb(255, 255, 255);
 }
 
-
 @media only screen and (min-width: 600px) {
-  .topbar {
-    width:
+  .searchbox-container {
+    flex-direction: column;
   }
 }
-@media only screen and (min-width: 600px) {
-  /* For tablets: */
-}
+
 @media only screen and (min-width: 768px) {
-  /* For desktop: */
-}
+  .searchbox-container {
+    flex-direction: row;
+  }
+}`
