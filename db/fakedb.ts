@@ -24,7 +24,7 @@ export const PropertyDb: PropertySearchResult[] = [
     image: "/ictmahidol.jpg",
     score: 8,
     price: 51515,
-    discount: 0,
+    discount: 100,
     nbr_of_reviews: 212,
     additional_label: "hello welcome, have escalator, have elevators",
     free_cancellation: false,
