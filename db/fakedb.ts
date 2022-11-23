@@ -20,7 +20,7 @@ export const PropertyDb: PropertySearchResult[] = [
     free_cancellation: true,
   },
   {
-    name: 'lucky lucky',
+    name: 'lucky lucky 1',
     image: '/biden.jpg',
     score: 10,
     price: 50,
