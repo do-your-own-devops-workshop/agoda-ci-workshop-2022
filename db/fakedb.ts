@@ -29,4 +29,14 @@ export const PropertyDb: PropertySearchResult[] = [
     additional_label: 'WRITE ANYTHING HERE',
     free_cancellation: true,
   },
+  {
+    name: 'Rotii Hotel',
+    image: '/rotii.jpg',
+    score: 10.0,
+    price: 340,
+    discount: 10,
+    nbr_of_reviews: 200,
+    additional_label: 'Come here free wifi',
+    free_cancellation: false,
+  },
 ];
