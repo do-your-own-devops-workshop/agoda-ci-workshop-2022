@@ -17,3 +17,29 @@ job:
           push: true
           tags: |
             encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}-alpha
+      - run: npx playwright install chromium
+      - uses: actions/checkout@v3
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: |
+            encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}-alpha
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+        node-version: 16.x
+      - run: yarn
+        needs: build
+      - run: yarn test:e2e
+      services:
+        our_website:
+          image: encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}-alpha
+          ports:
+            - 3000:3000
+      on:
+        pull_request:
+          branches: [main]
+      runs-on: ubuntu-latest
+
+
