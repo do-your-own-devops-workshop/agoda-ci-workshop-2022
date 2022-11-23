@@ -190,6 +190,16 @@ export const PropertyDb: PropertySearchResult[] = [
     free_cancellation: true,
   },
   {
+    name: 'Test Apartment',
+    image: '/trump.jpg',
+    score: 9,
+    price: 9999,
+    discount: 50,
+    nbr_of_reviews: 20,
+    additional_label: 'ONLY 2 LEFT',
+    free_cancellation: true,
+  },
+  {
     name: 'Freshman and Master Hotel',
     image: '/desk.jpg',
     score: 999,
