@@ -1,0 +1,22 @@
+on:
+  pull_request:
+    branches:[main]
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+          uses: docker/build-push-action@v3
+          with:
+          push: true
+                tags: |
+                       encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}-alpha
+  Test:
+     needs: build_and_push
+        runs-on: ubuntu-latest
+        steps:
+              services:
+                  our_website:
+                      image: encx/agoda-ci-workshop-2022:1.0.${{ github.run_id }}-alpha
+                      ports:
+                           - 3000:3000
